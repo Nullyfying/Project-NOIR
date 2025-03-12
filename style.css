@@ -38,19 +38,19 @@ p {
 
 @keyframes shake {
     0% {
-        transform: rotate(0deg);
+        transform: translateX(0);
     }
     25% {
-        transform: rotate(2deg);
+        transform: translateX(-5px);
     }
     50% {
-        transform: rotate(0deg);
+        transform: translateX(5px);
     }
     75% {
-        transform: rotate(-2deg);
+        transform: translateX(-5px);
     }
     100% {
-        transform: rotate(0deg);
+        transform: translateX(0);
     }
 }
 

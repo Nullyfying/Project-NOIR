@@ -25,7 +25,7 @@ h1 {
     letter-spacing: 5px;
     margin-bottom: 20px;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff;
-    animation: chromatic-aberration 1s infinite;
+    animation: shake 0.5s ease-in-out infinite;
 }
 
 p {
@@ -34,6 +34,24 @@ p {
     text-align: center;
     margin: 20px 0;
     color: #e0e0e0;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 @keyframes scanline {
@@ -76,27 +94,4 @@ img {
 
 img:hover {
     transform: scale(1.1);
-}
-
-@keyframes chromatic-aberration {
-    0% {
-        transform: translateX(0) translateY(0);
-        filter: sepia(100%) blur(0px) saturate(150%) contrast(120%);
-    }
-    25% {
-        transform: translateX(0px) translateY(0px);
-        filter: sepia(100%) blur(0px) saturate(150%) contrast(120%) brightness(0.9);
-    }
-    50% {
-        transform: translateX(0px) translateY(0px);
-        filter: sepia(100%) blur(0px) saturate(150%) contrast(120%) brightness(0.9);
-    }
-    75% {
-        transform: translateX(0px) translateY(0px);
-        filter: sepia(100%) blur(0px) saturate(150%) contrast(120%) brightness(0.9);
-    }
-    100% {
-        transform: translateX(0) translateY(0);
-        filter: sepia(100%) blur(0px) saturate(150%) contrast(120%);
-    }
 }

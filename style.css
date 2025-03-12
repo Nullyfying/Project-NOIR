@@ -100,11 +100,3 @@ img:hover {
         filter: sepia(100%) blur(2px) saturate(150%) contrast(120%);
     }
 }
-
-.flicker-text {
-    animation: flicker 2s infinite;
-}
-
-.chromatic-text {
-    animation: chromatic-aberration 1s infinite;
-}

@@ -1,27 +1,83 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
 h1 {
+    font-size: 3em;
+    color: #00ff00;
     text-align: center;
-    color: #4CAF50;
-    padding-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
 
 p {
+    font-size: 1.2em;
+    line-height: 1.6;
     text-align: center;
-    font-size: 18px;
+    margin: 20px 0;
+    color: #f0f0f0;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
 
-.container {
-    width: 80%;
+@keyframes scanline {
+    0% { background-position: 0 -100px; }
+    100% { background-position: 0 100px; }
+}
+
+.vhs-effect {
+    position: relative;
+    background: repeating-linear-gradient(transparent, transparent 0.5px, rgba(0, 255, 0, 0.1) 0.6px);
+    animation: scanline 0.1s linear infinite;
+    background-size: 100% 5px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.vhs-effect:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    z-index: -1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: grayscale(80%) contrast(150%);
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.flicker-text {
+    animation: flicker 2s infinite;
 }

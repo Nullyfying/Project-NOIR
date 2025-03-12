@@ -25,7 +25,7 @@ h1 {
     letter-spacing: 5px;
     margin-bottom: 20px;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff;
-    animation: shake 0.5s ease-in-out infinite;
+    animation: float 2s ease-in-out infinite;
 }
 
 p {
@@ -36,21 +36,21 @@ p {
     color: #e0e0e0;
 }
 
-@keyframes shake {
+@keyframes float {
     0% {
-        transform: translateX(0);
+        transform: translate(0, 0);
     }
     25% {
-        transform: translateX(-5px);
+        transform: translate(-3px, 3px);
     }
     50% {
-        transform: translateX(5px);
+        transform: translate(3px, -3px);
     }
     75% {
-        transform: translateX(-5px);
+        transform: translate(-3px, -3px);
     }
     100% {
-        transform: translateX(0);
+        transform: translate(0, 0);
     }
 }
 

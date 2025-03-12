@@ -1,6 +1,6 @@
 body {
-    background-color: #121212;
-    color: #f0f0f0;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
@@ -11,20 +11,20 @@ body {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid #00ff00;
+    background-color: #2b2b2b;
+    border: 1px solid #666;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     font-size: 3em;
-    color: #00ff00;
+    color: #e0e0e0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
     margin-bottom: 20px;
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
 }
 
 p {
@@ -32,8 +32,7 @@ p {
     line-height: 1.6;
     text-align: center;
     margin: 20px 0;
-    color: #f0f0f0;
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    color: #e0e0e0;
 }
 
 @keyframes scanline {
@@ -43,7 +42,7 @@ p {
 
 .vhs-effect {
     position: relative;
-    background: repeating-linear-gradient(transparent, transparent 0.5px, rgba(0, 255, 0, 0.1) 0.6px);
+    background: repeating-linear-gradient(transparent, transparent 0.5px, rgba(255, 255, 255, 0.1) 0.6px);
     animation: scanline 0.1s linear infinite;
     background-size: 100% 5px;
     overflow: hidden;
@@ -67,17 +66,36 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
-    filter: grayscale(80%) contrast(150%);
-    border: 2px solid #00ff00;
+    filter: grayscale(100%) contrast(120%);
+    border: 1px solid #666;
     border-radius: 5px;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
 }
 
-@keyframes flicker {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.8; }
+img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes chromatic-aberration {
+    0% {
+        transform: translateX(0) translateY(0);
+        filter: sepia(100%) blur(2px);
+    }
+    50% {
+        transform: translateX(-5px) translateY(5px);
+        filter: sepia(100%) blur(2px);
+    }
+    100% {
+        transform: translateX(5px) translateY(-5px);
+        filter: sepia(100%) blur(2px);
+    }
 }
 
 .flicker-text {
     animation: flicker 2s infinite;
+}
+
+.chromatic-text {
+    animation: chromatic-aberration 1s infinite;
 }

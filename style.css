@@ -80,18 +80,32 @@ p {
     z-index: -1;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    filter: grayscale(100%) contrast(120%);
-    border: 1px solid #666;
-    border-radius: 5px;
-    transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
+.expand-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
 
-img:hover {
-    transform: scale(1.1);
+.expand-button {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: 2px solid #666;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.expand-button:hover {
+    padding: 15px 60px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.6);
 }

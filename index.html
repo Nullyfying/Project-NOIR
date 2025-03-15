@@ -3,19 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VHS Test</title>
-    <link rel="stylesheet" href="style.css">
+    <title>PROJECT NOIR</title>
+    <style>
+        /* Обновлённые стили для подсказки */
+        .arrow-btn:hover::before {
+            background: rgba(100, 100, 100, 0.9);
+            color: #d0d0d0;
+            right: 25px;
+            left: auto;
+        }
+
+        /* Остальные стили остаются без изменений */
+    </style>
 </head>
 <body>
+    <!-- Остальная разметка без изменений -->
 
-    <div class="container">
-        <h1 class="vhs-effect">://PROJECT NOIR</h1>
-        <p>Page for agents and employees and of the NOIR corporation.</p>
+    <script>
+        const arrowBtn = document.querySelector('.arrow-btn');
+        const mainContainer = document.querySelector('.container');
+        const inputContainer = document.querySelector('.input-container');
+        let isInputActive = false;
 
-        <div class="expand-button-container">
-            <button class="expand-button">LOG IN</button>
-        </div>
-    </div>
+        // Обновляем data-атрибут при переключении
+        const updateTooltip = () => {
+            arrowBtn.dataset.tooltip = isInputActive ? 'Back' : 'More';
+        };
 
+        arrowBtn.addEventListener('click', function() {
+            isInputActive = !isInputActive;
+            updateTooltip();
+            
+            if(isInputActive) {
+                mainContainer.style.display = 'none';
+                inputContainer.style.display = 'block';
+                inputContainer.querySelector('.input-field').focus();
+            } else {
+                mainContainer.style.display = 'block';
+                inputContainer.style.display = 'none';
+            }
+        });
+
+        // Инициализация подсказки
+        arrowBtn.dataset.tooltip = 'More';
+    </script>
 </body>
 </html>

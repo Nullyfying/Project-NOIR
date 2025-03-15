@@ -5,47 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT NOIR</title>
     <style>
-        /* Обновлённые стили для подсказки */
-        .arrow-btn:hover::before {
-            background: rgba(100, 100, 100, 0.9);
-            color: #d0d0d0;
-            right: 25px;
-            left: auto;
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            font-family: 'Courier New', monospace;
+            color: #8e8e8e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-
-        /* Остальные стили остаются без изменений */
+        
+        .window {
+            background: rgba(0,0,0,0.8);
+            border: 2px solid #333;
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <!-- Остальная разметка без изменений -->
-
-    <script>
-        const arrowBtn = document.querySelector('.arrow-btn');
-        const mainContainer = document.querySelector('.container');
-        const inputContainer = document.querySelector('.input-container');
-        let isInputActive = false;
-
-        // Обновляем data-атрибут при переключении
-        const updateTooltip = () => {
-            arrowBtn.dataset.tooltip = isInputActive ? 'Back' : 'More';
-        };
-
-        arrowBtn.addEventListener('click', function() {
-            isInputActive = !isInputActive;
-            updateTooltip();
-            
-            if(isInputActive) {
-                mainContainer.style.display = 'none';
-                inputContainer.style.display = 'block';
-                inputContainer.querySelector('.input-field').focus();
-            } else {
-                mainContainer.style.display = 'block';
-                inputContainer.style.display = 'none';
-            }
-        });
-
-        // Инициализация подсказки
-        arrowBtn.dataset.tooltip = 'More';
-    </script>
+    <div class="window">
+        <h1>TEST TITLE</h1>
+        <p>If you see this - base styles work!</p>
+    </div>
 </body>
 </html>

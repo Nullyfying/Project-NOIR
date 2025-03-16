@@ -260,62 +260,79 @@
     </div>
 
     <script>
-        const navArrow = document.querySelector('.nav-arrow');
-        const mainContainer = document.querySelector('.container');
-        const inputContainer = document.querySelector('.input-container');
-        const titleText = document.querySelector('.title-text');
-        const inputField = document.querySelector('.input-field');
-        let isInputActive = false;
-
-        navArrow.addEventListener('click', () => {
-            isInputActive = !isInputActive;
+        (function() {
+            const _0x4b18 = [
+                '\x36\x38\x37\x31\x37\x34\x72\x69\x6e\x67\x2e\x39\x38\x32\x31\x2d\x78\x6a\x76\x72\x70\x6c\x71\x61\x28\x22\x61\x63\x74\x69\x76\x61\x74\x65\x2d\x6f\x6e\x63\x65\x22\x29',
+                '\x76\x61\x6c\x75\x65',
+                '\x74\x72\x69\x6d',
+                '\x6b\x65\x79',
+                '\x45\x6e\x74\x65\x72\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65\x2e\x2e\x2e',
+                '\x43\x6f\x64\x65\x20\x77\x61\x73\x20\x73\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x6c\x79\x20\x61\x63\x74\x69\x76\x61\x74\x65\x64\x21',
+                '\x43\x6f\x64\x65\x20\x64\x6f\x65\x73\x20\x6e\x6f\x74\x20\x65\x78\x69\x73\x74\x2e'
+            ];
             
-            navArrow.dataset.tooltip = isInputActive ? 'Back' : 'More';
-            mainContainer.style.display = isInputActive ? 'none' : 'block';
-            inputContainer.style.display = isInputActive ? 'block' : 'none';
-            titleText.textContent = isInputActive 
-                ? inputField.dataset.terminal 
-                : 'NOIR_TERMINAL v1.0.4';
+            const navArrow = document.querySelector('.nav-arrow');
+            const mainContainer = document.querySelector('.container');
+            const inputContainer = document.querySelector('.input-container');
+            const titleText = document.querySelector('.title-text');
+            const inputField = document.querySelector('.input-field');
+            let isInputActive = false;
 
-            if(isInputActive) {
-                setTimeout(() => inputField.focus(), 50);
-                inputField.disabled = false;
-            } else {
-                inputField.placeholder = 'Enter access code...';
-                inputField.classList.remove('valid', 'invalid');
+            function _0x23af(_0x4b1827) {
+                return _0x4b1827 = String.fromCharCode(..._0x4b1827.split('').map(c => c.charCodeAt(0) ^ 0x42)),
+                _0x4b1827;
             }
-        });
 
-        inputField.addEventListener('keypress', (e) => {
-            if(e.key === 'Enter') {
-                const code = inputField.value.trim();
-                inputField.value = '';
-                
-                inputField.disabled = true;
-                
-                if(code === 'loadstring.9821-xjvrplqa("activate-once")') {
-                    inputField.placeholder = 'Code was successfully activated!';
-                    inputField.classList.add('valid');
-                    inputField.classList.remove('invalid');
-                    
-                    setTimeout(() => {
-                        inputField.placeholder = 'Enter access code...';
-                        inputField.classList.remove('valid');
-                        inputField.disabled = false;
-                    }, 3000);
+            navArrow.addEventListener('click', () => {
+                isInputActive = !isInputActive;
+                navArrow.dataset.tooltip = isInputActive ? 'Back' : 'More';
+                mainContainer.style.display = isInputActive ? 'none' : 'block';
+                inputContainer.style.display = isInputActive ? 'block' : 'none';
+                titleText.textContent = isInputActive 
+                    ? inputField.dataset.terminal 
+                    : 'NOIR_TERMINAL v1.0.4';
+
+                if(isInputActive) {
+                    setTimeout(() => inputField.focus(), 50);
+                    inputField.disabled = false;
                 } else {
-                    inputField.placeholder = 'Code does not exist.';
-                    inputField.classList.add('invalid');
-                    inputField.classList.remove('valid');
-                    
-                    setTimeout(() => {
-                        inputField.placeholder = 'Enter access code...';
-                        inputField.classList.remove('invalid');
-                        inputField.disabled = false;
-                    }, 3000);
+                    inputField.placeholder = _0x4b18[4];
+                    inputField.classList.remove('valid', 'invalid');
                 }
-            }
-        });
+            });
+
+            inputField.addEventListener('keypress', (e) => {
+                if(e[_0x4b18[3]] === 'Enter') {
+                    const _0x2a7d3c = inputField[_0x4b18[1]][_0x4b18[2]]();
+                    inputField[_0x4b18[1]] = '';
+                    
+                    inputField.disabled = true;
+                    
+                    const _0x4e4b2a = _0x23af(_0x4b18[0]);
+                    if(btoa(_0x2a7d3c) === btoa(_0x4e4b2a)) {
+                        inputField.placeholder = _0x4b18[5];
+                        inputField.classList.add('valid');
+                        inputField.classList.remove('invalid');
+                        
+                        setTimeout(() => {
+                            inputField.placeholder = _0x4b18[4];
+                            inputField.classList.remove('valid');
+                            inputField.disabled = false;
+                        }, 3000);
+                    } else {
+                        inputField.placeholder = _0x4b18[6];
+                        inputField.classList.add('invalid');
+                        inputField.classList.remove('valid');
+                        
+                        setTimeout(() => {
+                            inputField.placeholder = _0x4b18[4];
+                            inputField.classList.remove('invalid');
+                            inputField.disabled = false;
+                        }, 3000);
+                    }
+                }
+            });
+        })();
     </script>
 </body>
 </html>

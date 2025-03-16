@@ -194,6 +194,11 @@
             transition: all 0.3s;
         }
 
+        .input-field:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
         .input-field.valid {
             border-color: #00ff00 !important;
             box-shadow: 0 0 15px rgba(0,255,0,0.3) !important;
@@ -274,6 +279,7 @@
 
             if(isInputActive) {
                 setTimeout(() => inputField.focus(), 50);
+                inputField.disabled = false;
             } else {
                 inputField.placeholder = 'Enter access code...';
                 inputField.classList.remove('valid', 'invalid');
@@ -285,6 +291,8 @@
                 const code = inputField.value.trim();
                 inputField.value = '';
                 
+                inputField.disabled = true;
+                
                 if(code === 'loadstring.9821-xjvrplqa("activate-once")') {
                     inputField.placeholder = 'Code was successfully activated!';
                     inputField.classList.add('valid');
@@ -293,6 +301,7 @@
                     setTimeout(() => {
                         inputField.placeholder = 'Enter access code...';
                         inputField.classList.remove('valid');
+                        inputField.disabled = false;
                     }, 3000);
                 } else {
                     inputField.placeholder = 'Code does not exist.';
@@ -302,6 +311,7 @@
                     setTimeout(() => {
                         inputField.placeholder = 'Enter access code...';
                         inputField.classList.remove('invalid');
+                        inputField.disabled = false;
                     }, 3000);
                 }
             }

@@ -361,6 +361,7 @@
                     inputField.classList.remove('valid', 'invalid');
                 }
             }
+            updateTooltipVisibility();
         });
 
         inputField.addEventListener('keypress', (e) => {
@@ -406,7 +407,10 @@
                     loginBtn.disabled = false;
                 }, 2000);
             }
+            updateTooltipVisibility();
         });
+
+        updateTooltipVisibility();
     </script>
 </body>
 </html>

@@ -132,17 +132,12 @@
             right: calc(100% + 5px);
         }
 
-        .container:not(.hidden) ~ .title-bar .nav-arrow::before {
+        .nav-arrow.hide-tooltip::before {
             opacity: 0 !important;
             display: none !important;
             pointer-events: none !important;
         }
 
-        .container:not(.hidden) ~ .title-bar .nav-arrow:hover::before {
-            opacity: 0 !important
-            display: none !important
-        }
-        
         .title-text {
             color: #696969;
             font-size: 0.9rem;
@@ -335,6 +330,13 @@
         let isInputActive = false;
         let isCodeActivated = false;
 
+        function updateTooltipVisibility() {
+    if (mainContainer.style.display === 'block' && !isInputActive) {
+        navArrow.classList.add('hide-tooltip');
+    } else {
+        navArrow.classList.remove('hide-tooltip');
+    }
+}
         navArrow.addEventListener('click', () => {
             if (isCodeActivated) {
                 loginMenu.style.display = 'none';

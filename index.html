@@ -132,13 +132,13 @@
             right: calc(100% + 5px);
         }
 
-        .container .nav-arrow::before {
+        .container:not(.hidden) ~ .title-bar .nav-arrow::before {
             opacity: 0 !important;
             display: none !important;
             pointer-events: none !important;
         }
 
-        .container .nav-arrow:hover::before {
+        .container:not(.hidden) ~ .title-bar .nav-arrow:hover::before {
             opacity: 0 !important
             display: none !important
         }
